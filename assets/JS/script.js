@@ -2,7 +2,9 @@ var searchBox = document.getElementById("form1");
 var searchButton = document.getElementById("search-btn");
 var randButton = document.getElementById("random-btn");
 var listArray = document.getElementById("instructions");
-
+var details = document.getElementById("drink-details");
+var testButton = document.getElementById("test");
+var detailName = document.getElementById("drink-name");
 
 function searchByName(){
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+searchBox.value)
@@ -15,6 +17,7 @@ function searchByName(){
         for (var i = 0; i < data.drinks.length; i++) {
             var instructionItem = document.createElement("li");
             instructionItem.textContent = data.drinks[i].strDrink;
+            detailName.textContent=data.drinks[i].strDrink;
             listArray.appendChild(instructionItem);
             console.log(data.drinks[i].strDrink);
         }
@@ -39,7 +42,13 @@ function searchRandom(){
 
 }
 
+function showHide(){
+    listArray.classList.add("hide");
+    details.classList.remove("hide");
+}
+
 
 randButton.addEventListener("click", searchRandom);
 searchButton.addEventListener("click", searchByName);
+testButton.addEventListener("click", showHide);
 
