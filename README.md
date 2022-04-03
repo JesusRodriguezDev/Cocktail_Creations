@@ -79,20 +79,23 @@ SO THAT I can try something different,
 
 List of Contributors:
 
-1. Micah Diaz - HTML, CSS, JavaScript
+1. Micah Diaz - HTML, CSS, JavaScript, API
 
 2. Jesus Rodriguez - CSS, JavaScript, API
 
-3. Kelly Walsh - HTML, JavaScript
+3. Kelly Walsh - CSS, HTML, JavaScript, API
 
 4. Andrew Young - HTML, JavaScript, API
 
 ## Contact Info
 
 Micah Diaz - micah.diaz@du.edu [![LinkedIn][linkedin-shield]][linkedin-url-micah] [![GitHub][github-shield]][github-url-micah] </br>
-Giovanni Domino - gdomino01@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-giovanni] [![GitHub][github-shield]][github-url-giovanni] </br>
+ </br>
 Kelly Walsh - kellywalsh827@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-kelly] [![GitHub][github-shield]][github-url-kelly] </br>
-Najla Parker - najla08@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-naj] [![GitHub][github-shield]][github-url-naj]
+</br>
+Jesus Rodriguez - </br>
+</br>
+Andrew Young - awyimtb@gmail.com </br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
