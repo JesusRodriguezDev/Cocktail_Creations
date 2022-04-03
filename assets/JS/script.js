@@ -17,7 +17,7 @@ function searchByName(){
         for (var i = 0; i < data.drinks.length; i++) {
             var instructionItem = document.createElement("li");
             instructionItem.textContent = data.drinks[i].strDrink;
-            detailName.textContent=data.drinks[i].strDrink;
+            detailName.textContent=data.drinks[i].strInstruction[true];
             listArray.appendChild(instructionItem);
             console.log(data.drinks[i].strDrink);
         }
