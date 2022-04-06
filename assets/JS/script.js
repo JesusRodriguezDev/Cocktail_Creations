@@ -2,7 +2,8 @@ var searchBox = document.getElementById("form1");
 var searchButton = document.getElementById("search-btn");
 var videoButton = document.getElementById("video-btn");
 var resultMain = document.getElementById("result-main");
-const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y"
+const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
+const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 
 
 function searchByName(){
@@ -50,7 +51,7 @@ function searchRandom(){
 
 function searchVideo(){
   
-        fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q="+searchBox.value+"&type=video&key="+apiKey)
+        fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+searchBox.value+"&type=video&key="+apiKey)
                      
         .then(function(response) {
             return response.json();
