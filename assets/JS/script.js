@@ -1,7 +1,8 @@
 var searchBox = document.getElementById("form1");
 var searchButton = document.getElementById("search-btn");
-var randButton = document.getElementById("random-btn");
+var videoButton = document.getElementById("video-btn");
 var resultMain = document.getElementById("result-main");
+const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y"
 
 
 function searchByName(){
@@ -23,21 +24,10 @@ function searchByName(){
         drinknameMain.textContent = drinkName;
         instructionMain.textContent = drinkInstruction;
   
-
-
-        // for (var i = 0; i < data.drinks.length; i++) {
-    
-        //     instructionItem.textContent = data.drinks[i].strDrink;
-        //     // detailName.textContent=data.drinks[i].strDrink;
-        //     listArray.appendChild(instructionItem);
-        //     console.log(data.drinks[i].strDrink);
-        // }
         console.log(data);
     })
-    
-    
+};
 
-}
 
 function searchRandom(){
     fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
@@ -58,8 +48,20 @@ function searchRandom(){
 //     details.classList.remove("hide");
 // }
 
+function searchVideo(){
+  
+        fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q="+searchBox.value+"&type=video&key="+apiKey)
+                     
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+        }) 
+}
 
-randButton.addEventListener("click", searchRandom);
+
+videoButton.addEventListener("click", searchVideo);
 searchButton.addEventListener("click", searchByName);
-// testButton.addEventListener("click", showHide);
+
 
