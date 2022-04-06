@@ -2,6 +2,7 @@ var searchBox = document.getElementById("form1");
 var searchButton = document.getElementById("search-btn");
 var videoButton = document.getElementById("video-btn");
 var resultMain = document.getElementById("result-main");
+var videoUrlEl = document.getElementById("video-link");
 const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 
@@ -57,7 +58,11 @@ function searchVideo(){
             return response.json();
         })
         .then(function(data){
+            var videoId = data.items[0].id.videoId;
+            var videoLink = document.getElementById("video-link").href="https://www.youtube.com/watch?v="+videoId;
+            videoUrlEl.textContent=videoLink;
             console.log(data);
+            console.log(videoLink);
         }) 
 }
 
