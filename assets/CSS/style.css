@@ -39,6 +39,11 @@
     background-color: rgb(224, 219, 212);
     color: rgb(82, 73, 60);;
 }
+
+#search-input {
+    font-family: 'Wire One';
+}
+
 .loaderMain {
     height: 100vh;
     background-color: rgb(14, 4, 11);
@@ -51,6 +56,7 @@
     --theme-color: rgb(182, 159, 126);
     --theme-color-dark: rgb(95, 74, 45);
 }
+
 body{
     font-weight: 300;
     font-size: 1.05rem;
@@ -64,6 +70,8 @@ body{
     opacity: 0.8;
 }
 .title{
+    font-family: 'Megrim';
+    color:rgb(82, 73, 60);
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -126,9 +134,14 @@ body{
     padding: 1.5rem 0.5rem;
 }
 .cocktail-name h3{
-    font-size: 1.4rem;
+    font-size: 2.3rem;
+    font-family: 'Wire One';
+    text-align: center;
+    
 }
+
 .recipe-btn{
+    font-family: 'Wire One';
     text-decoration: none;
     text-align: center;
     color: #fff;
