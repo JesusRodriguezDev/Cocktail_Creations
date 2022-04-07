@@ -30,59 +30,42 @@
     <title>Cocktail Creations</title>
   </head>
   <body>
-    <div>
-      <header>
-        <h1 class="header">Cocktail Creations</h1>
-      </header>
-    </div>
+    <header>
+      <h1 class="header">Cocktail Creations</h1>
+    </header>
+  
     <div class="container">
       <div class="input-group d-flex justify-content-center">
-        <div class="form-outline">
-          <input type="search" id="form1" class="form-control" />
-          <label class="form-label" for="form1">Search</label>
-          <button
-            id="search-btn"
-            type="button"
-            class="btn btn-primary position-relative"
-            data-mdb-ripple-unbound="true"
-          >
-            Search
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"
-            ></span>
-          </button>
+        <!-- search-box section -->
+        <div class="cocktail-search-box">
+          <input type="text" id="search-input" class="search-control" placeholder="Search for a drink"/>
+            <!-- search-btn -->
+          <button id="search-btn" type="submit" class="btn btn-primary position-relative search-btn" data-mdb-ripple-unbound="true">Search<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"></span></button>
+            <!-- video-btn -->
+          <button id="video-btn" type="button" class="btn btn-primary position-relative" data-mdb-ripple-unbound="true">Video<span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"></span></button>
+        </div> 
+        <!-- end of search-box -->
 
-
-          <button
-            id="video-btn"
-            type="button"
-            class="btn btn-primary position-relative"
-            data-mdb-ripple-unbound="true"
-          >
-            Video
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"
-            ></span>
-          </button>
+        <!-- cocktail result -->
+        <div class = "cocktail-result">
+          <h2 class = "title">Your Search Results:</h2>
+          <div id= "cocktail"></div>
         </div>
+        <!-- cocktail details -->
+        <div class = "cocktail-details">
+          <!-- recipe close btn -->
+          <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+            <i class = "fas fa-times"></i>
+          </button>
+
+          <!-- meal content -->
+          <div class = "cocktail-details-content"></div>
+        </div>
+        <!-- video link -->
+        <div class="links"></div>
       </div>
     </div>
-    <div>
-    <section class="section cocktailMain" id="result-main">
-      <div>
-      <img id="thumbnail1" src="" data-number=0>
-      <h1 id="drink-name"></h1>
-      <p id="drink-instruction"></p>
-      </div>
-      <div>
-        <img id="thumbnail1" src="" data-number=1>
-        <h1 id="drink-name"></h1>
-        <p id="drink-instruction"></p>
-      </div>
-      <div class="links">
-      </div>
-
-    </section>
+ 
     <!-- MDB -->
     <script
       type="text/javascript"

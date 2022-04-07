@@ -1,50 +1,81 @@
-var searchBox = document.getElementById("form1");
-var searchButton = document.getElementById("search-btn");
+var searchBox = document.getElementById("search-input");
+var searchBtn = document.getElementById("search-btn");
 var videoButton = document.getElementById("video-btn");
-var resultMain = document.getElementById("result-main");
+const cocktailList = document.getElementById('cocktail');
+const cocktailDetailsContent = document.querySelector('.cocktail-details-content');
+const recipeCloseBtn = document.getElementById('recipe-close-btn');
 // var videoUrlEl = document.getElementById("video-link");
 const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 var linksEl = document.querySelector(".links");
 
-function searchByName() {
-  fetch(
-    "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
-      searchBox.value
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      var thumbnailMain = document.getElementById("thumbnail1");
-      var drinknameMain = document.getElementById("drink-name");
-      var instructionMain = document.getElementById("drink-instruction");
-      var drinkName = data.drinks[0].strDrink;
-      var drinkInstruction = data.drinks[0].strInstructions;
-      var drinkThumbnail = data.drinks[0].strDrinkThumb;
+// button event for cocktailDB and Youtube
+videoButton.addEventListener("click", searchVideo);
+searchBtn.addEventListener('click', getCocktailList);
+cocktailList.addEventListener('click', getCocktailRecipe);
+recipeCloseBtn.addEventListener('click', () => {
+    cocktailDetailsContent.parentElement.classList.remove('showRecipe');
+});
 
-      thumbnailMain.src = drinkThumbnail;
-      drinknameMain.textContent = drinkName;
-      instructionMain.textContent = drinkInstruction;
+function getCocktailList(){
+  let searchedCocktail = searchBox.value.trim();
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchedCocktail}`)
+  .then(response => response.json())
+  .then(data => {
+      let html = "";
+      if(data.drinks){
+          data.drinks.forEach(cocktail => {
+              html += `
+                  <div class = "cocktail-item" data-id="${cocktail.idDrink}">
+                      <div class = "cocktail-img">
+                          <img src = "${cocktail.strDrinkThumb}" alt = "drink">
+                      </div>
+                      <div class = "cocktail-name">
+                          <h3>${cocktail.strDrink}</h3>
+                          <a href = "#" class = "recipe-btn">Get Recipe</a>
+                      </div>
+                  </div>
+              `;
+          });
+          cocktailList.classList.remove('notFound');
+      } else{
+          html = "Sorry, we didn't find any cocktail!";
+          cocktailList.classList.add('notFound');
+      }
 
-      console.log(data);
-    });
+      cocktailList.innerHTML = html;
+  });
+}
+function getCocktailRecipe(e){
+  if(e.target.classList.contains('recipe-btn')){
+      let cocktailItem = e.target.parentElement.parentElement;
+      fetch(`www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailItem.dataset.id}`)
+      .then(response => response.json())
+      .then(data => cocktailRecipeModal(data.drinks));
+  }
 }
 
-function searchRandom() {
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
+// create a modal
+function cocktailRecipeModal(cocktail){
+  console.log(cocktail);
+  cocktail = cocktail[0];
+  let html = `
+      <h2 class = "recipe-title">${cocktail.strDrink}</h2>
+      <p class = "recipe-category">${cocktail.strCategory}</p>
+      <div class = "recipe-instruct">
+          <h3>Instructions:</h3>
+          <p>${cocktail.strInstructions}</p>
+      </div>
+      <div class = "recipe-cocktail-img">
+          <img src = "${cocktail.strDrinkThumb}" alt = "">
+      </div>
+      <div class = "recipe-link">
+          <a href = "" target = "_blank">Watch Video</a>
+      </div>
+  `;
+  cocktailDetailsContent.innerHTML = html;
+  cocktailDetailsContent.parentElement.classList.add('showRecipe');
 }
-
-// function showHide(){
-//     listArray.classList.add("hide");
-//     details.classList.remove("hide");
-// }
 
 function searchVideo() {
   fetch(
@@ -67,8 +98,6 @@ function searchVideo() {
         console.log(linksEl);
         linksEl.appendChild(links);
 
-      
-      
 
         console.log(data);
         // console.log(videoLink);
@@ -76,5 +105,3 @@ function searchVideo() {
     });
 }
 
-videoButton.addEventListener("click", searchVideo);
-searchButton.addEventListener("click", searchByName);
