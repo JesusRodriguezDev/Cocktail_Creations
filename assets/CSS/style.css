@@ -39,6 +39,13 @@
     background-color: rgb(224, 219, 212);
     color: rgb(82, 73, 60);;
 }
+.loaderMain {
+    height: 100vh;
+    background-color: rgb(14, 4, 11);
+    display: flex;
+    justify-content: center;
+    vertical-align: auto;
+}
 
 :root{
     --theme-color: rgb(182, 159, 126);

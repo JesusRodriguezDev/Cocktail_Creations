@@ -4,11 +4,25 @@ var videoButton = document.getElementById("video-btn");
 const cocktailList = document.getElementById('cocktail');
 const cocktailDetailsContent = document.querySelector('.cocktail-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
+const containerMain = document.querySelector(".containerMain");
 // var videoUrlEl = document.getElementById("video-link");
 const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 var linksEl = document.querySelector(".links");
-
+window.onload = () => {
+  var firstTime = Boolean(sessionStorage.getItem("isLoaded"));
+  if (!firstTime) {
+    // first time loaded!
+    containerMain.style.display = "none";
+    setTimeout(() => {
+      sessionStorage.setItem("isLoaded", "true");
+      containerMain.style.display = "block";
+      document.querySelector(".loaderMain").style.display = "none";
+    }, 3000);
+  } else {
+    document.querySelector(".loaderMain").style.display = "none";
+  }
+};
 // button event for cocktailDB and Youtube
 videoButton.addEventListener("click", searchVideo);
 searchBtn.addEventListener('click', getCocktailList);
