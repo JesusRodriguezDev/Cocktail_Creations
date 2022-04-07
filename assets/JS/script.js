@@ -64,7 +64,7 @@ function getCocktailList(){
 function getCocktailRecipe(e){
   if(e.target.classList.contains('recipe-btn')){
       let cocktailItem = e.target.parentElement.parentElement;
-      fetch(`www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailItem.dataset.id}`)
+      fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailItem.dataset.id}`)
       .then(response => response.json())
       .then(data => cocktailRecipeModal(data.drinks));
   }
@@ -75,17 +75,17 @@ function cocktailRecipeModal(cocktail){
   console.log(cocktail);
   cocktail = cocktail[0];
   let html = `
+      <div class = "recipe-cocktail-img">
+        <img src = "${cocktail.strDrinkThumb}" alt = "">
+      </div>
       <h2 class = "recipe-title">${cocktail.strDrink}</h2>
       <p class = "recipe-category">${cocktail.strCategory}</p>
       <div class = "recipe-instruct">
           <h3>Instructions:</h3>
           <p>${cocktail.strInstructions}</p>
       </div>
-      <div class = "recipe-cocktail-img">
-          <img src = "${cocktail.strDrinkThumb}" alt = "">
-      </div>
       <div class = "recipe-link">
-          <a href = "" target = "_blank">Watch Video</a>
+      <a href = "https://www.youtube.com/" target = "_blank" class = "recipe-btn">Watch Video</a>
       </div>
   `;
   cocktailDetailsContent.innerHTML = html;
