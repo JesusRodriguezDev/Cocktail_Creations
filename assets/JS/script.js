@@ -22,6 +22,7 @@ window.onload = () => {
   } else {
     document.querySelector(".loaderMain").style.display = "none";
   }
+  getCocktailList();
 };
 // button event for cocktailDB and Youtube
 videoButton.addEventListener("click", searchVideo);
