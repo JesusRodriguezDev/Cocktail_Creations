@@ -25,11 +25,7 @@
 
 ## Description:
 
-Codey Buddy is a website that will be used for individuals
-who want to learn how to use a variety of coding languages. This will
-display the basic information on how to use such languages. The information can
-be varied by articles, YouTube videos, and some coding games to try out
-whenever the user wants to try the language first hand.
+Cocktail Creations is a site designed to help the user choose a satisfying cocktail. The site displays a pictured list to get the user started. When the get recipe button is cliked the user is taken to the search field. Here the user may enter a drink by name. When the search button is clicked the user is presented with pictured list of variatons on each cocktail. Each variation conatins a "Get Recipe" button which presents the user with five links to YouTube videos demonstrating to the user how to make the drink.
 
 ## User Story
 
