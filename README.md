@@ -25,7 +25,7 @@
 
 ## Description:
 
-Cocktail Creations is a site designed to help the user choose a satisfying cocktail. The site displays a pictured list to get the user started. When the get recipe button is cliked the user is taken to the search field. Here the user may enter a drink by name. When the search button is clicked the user is presented with pictured list of variatons on each cocktail. Each variation conatins a "Get Recipe" button which presents the user with five links to YouTube videos demonstrating to the user how to make the drink.
+Cocktail Creations is a site designed to help the user choose a satisfying cocktail. The site displays a pictured list to get the user started. When the get recipe button is cliked the user is presented with a pop up displaying the cocktail picture, instructions, and a "Watch Video" button. The "Watch Video" button is a direct link to the YouTube video selection for the selected drink. In the search feild the user may enter a drink by name. When the search button is clicked the user is presented with a pictured list of variatons on each cocktail. Each variation conatins a "Get Recipe" button which presents the user with the pop up window listing the instructions and the video link.
 
 ## User Story
 
