@@ -89,9 +89,9 @@ Micah Diaz - micah.diaz@du.edu [![LinkedIn][linkedin-shield]][linkedin-url-micah
  </br>
 Kelly Walsh - kellywalsh827@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-kelly] [![GitHub][github-shield]][github-url-kelly] </br>
 </br>
-Jesus Rodriguez - </br>
+Jesus Rodriguez - [![LinkedIn][linkedin-shield]][linkedin-url-jesus] [![GitHub][github-shield]][github-url-jesus] </br>
 </br>
-Andrew Young - awyimtb@gmail.com </br>
+Andrew Young - awyimtb@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-andy][![GitHub][github-shield]][github-url-andy] </br>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -110,13 +110,13 @@ Andrew Young - awyimtb@gmail.com </br>
 [license-url]: https://github.com/micsdz/codey-buddy/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url-micah]: https://www.linkedin.com/in/mdiaz06/
-[linkedin-url-giovanni]: https://www.linkedin.com/in/
+[linkedin-url-jesus]: 
 [linkedin-url-kelly]: https://www.linkedin.com/in/kellywalsh001/
-[linkedin-url-naj]: https://www.linkedin.com/in/najlaparker/
+[linkedin-url-andy]: https://www.linkedin.com/in/andrew-young-88484a1b3
 [github-shield]: https://img.shields.io/badge/-Github-blueviolet.svg?style=for-the-badge&logo=Github&colorB=555
 [github-url-micah]: https://github.com/micsdz
-[github-url-giovanni]: https://github.com/GiovanniDomino
 [github-url-kelly]: https://github.com/kemwalsh
-[github-url-naj]: https://github.com/nparker80
+[github-url-jesus]: https://github.com/JesusRodriguezDev
+[github-url-andy]: https://github.com/AndrewYoung72
 [github-watchers]: https://img.shields.io/github/watchers/micsdz/codey-buddy?style=social
 [github-watchers-url]: https://github.com/micsdz/codey-buddy/watchers
