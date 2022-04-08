@@ -1,10 +1,9 @@
 var searchBox = document.getElementById("search-input");
 var searchBtn = document.getElementById("search-btn");
+var searchBoxId = document.getElementById("searchBoxId");
 var videoButton = document.getElementById("video-btn");
 const cocktailList = document.getElementById("cocktail");
-const cocktailDetailsContent = document.querySelector(
-  ".cocktail-details-content"
-);
+const cocktailDetailsContent = document.querySelector(".cocktail-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 const containerMain = document.querySelector(".containerMain");
 // var videoUrlEl = document.getElementById("video-link");
@@ -12,6 +11,7 @@ const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 var linksEl = document.querySelector(".links");
 var youtubeLink = "https://www.youtube.com/watch?v=";
+
 window.onload = () => {
   var firstTime = Boolean(sessionStorage.getItem("isLoaded"));
   if (!firstTime) {
@@ -37,6 +37,7 @@ recipeCloseBtn.addEventListener("click", () => {
 
 function getCocktailList() {
   let searchedCocktail = searchBox.value.trim();
+  previousSaved(searchedCocktail);
   fetch(
     `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchedCocktail}`
   )
@@ -137,3 +138,15 @@ function searchVideo(youtubeDrink) {
       console.log(linksEl);
     });
 }
+
+function previousSaved(cocktail) {
+  if(!cocktail) return;
+  var getStoredCocktails = JSON.parse(localStorage.getItem("savedCocktails"));
+  if (getStoredCocktails) {
+    console.log(getStoredCocktails);
+    getStoredCocktails.push(cocktail);
+    localStorage.setItem("savedCocktails", JSON.stringify(getStoredCocktails));
+  } else {
+    localStorage.setItem("savedCocktails", JSON.stringify([cocktail]));
+  }
+};
