@@ -11,6 +11,7 @@ const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 var linksEl = document.querySelector(".links");
 var youtubeLink = "https://www.youtube.com/watch?v=";
+var listSearches = document.getElementById("list-searches");
 
 window.onload = () => {
   var firstTime = Boolean(sessionStorage.getItem("isLoaded"));
@@ -27,6 +28,7 @@ window.onload = () => {
   }
   getCocktailList();
 };
+
 // button event for cocktailDB and Youtube
 videoButton.addEventListener("click", searchVideo);
 searchBtn.addEventListener("click", getCocktailList);
@@ -149,4 +151,25 @@ function previousSaved(cocktail) {
   } else {
     localStorage.setItem("savedCocktails", JSON.stringify([cocktail]));
   }
+  function addSearchesToList() {
+    getStoredCocktails.forEach(search => {
+      var li = document.createElement("li");
+      var liText = getStoredCocktails[search].value;
+      li.innerHTML = liText;
+      // li.appendChild(document.createTextNode(liText));
+      listSearches.appendChild(li);
+      console.log(getStoredCocktails)
+    })
+    };
+  // addSearchesToList();
 };
+
+// function addSearchesToList() {
+// getStoredCocktails.forEach(search => {
+//   var li = document.createElement("li");
+//   var liText = getStoredCocktails[search].value;
+//   li.appendChild(document.createTextNode(liText));
+//   listSearches.appendChild(li);
+//   console.log(getStoredCocktails)
+// })
+// };
