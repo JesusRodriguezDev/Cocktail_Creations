@@ -269,6 +269,9 @@ body {
 .hidden {
   display: none;
 }
+#listContainer {
+  background-color: lightgray;
+}
 
 /* Media Queries */
 @media screen and (min-width: 600px) {
