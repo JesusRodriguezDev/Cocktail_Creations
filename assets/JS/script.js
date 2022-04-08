@@ -1,14 +1,17 @@
 var searchBox = document.getElementById("search-input");
 var searchBtn = document.getElementById("search-btn");
 var videoButton = document.getElementById("video-btn");
-const cocktailList = document.getElementById('cocktail');
-const cocktailDetailsContent = document.querySelector('.cocktail-details-content');
-const recipeCloseBtn = document.getElementById('recipe-close-btn');
+const cocktailList = document.getElementById("cocktail");
+const cocktailDetailsContent = document.querySelector(
+  ".cocktail-details-content"
+);
+const recipeCloseBtn = document.getElementById("recipe-close-btn");
 const containerMain = document.querySelector(".containerMain");
 // var videoUrlEl = document.getElementById("video-link");
 const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
 const channelId = "UCu9ArHUJZadlhwt3Jt0tqgA";
 var linksEl = document.querySelector(".links");
+var youtubeLink = "https://www.youtube.com/watch?v=";
 window.onload = () => {
   var firstTime = Boolean(sessionStorage.getItem("isLoaded"));
   if (!firstTime) {
@@ -26,21 +29,23 @@ window.onload = () => {
 };
 // button event for cocktailDB and Youtube
 videoButton.addEventListener("click", searchVideo);
-searchBtn.addEventListener('click', getCocktailList);
-cocktailList.addEventListener('click', getCocktailRecipe);
-recipeCloseBtn.addEventListener('click', () => {
-    cocktailDetailsContent.parentElement.classList.remove('showRecipe');
+searchBtn.addEventListener("click", getCocktailList);
+cocktailList.addEventListener("click", getCocktailRecipe);
+recipeCloseBtn.addEventListener("click", () => {
+  cocktailDetailsContent.parentElement.classList.remove("showRecipe");
 });
 
-function getCocktailList(){
+function getCocktailList() {
   let searchedCocktail = searchBox.value.trim();
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchedCocktail}`)
-  .then(response => response.json())
-  .then(data => {
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchedCocktail}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
       let html = "";
-      if(data.drinks){
-          data.drinks.forEach(cocktail => {
-              html += `
+      if (data.drinks) {
+        data.drinks.forEach((cocktail) => {
+          html += `
                   <div class = "cocktail-item" data-id="${cocktail.idDrink}">
                       <div class = "cocktail-img">
                           <img src = "${cocktail.strDrinkThumb}" alt = "drink">
@@ -51,28 +56,33 @@ function getCocktailList(){
                       </div>
                   </div>
               `;
-          });
-          cocktailList.classList.remove('notFound');
-      } else{
-          html = "Sorry, we didn't find any cocktail!";
-          cocktailList.classList.add('notFound');
+        });
+        cocktailList.classList.remove("notFound");
+      } else {
+        html = "Sorry, we didn't find any cocktail!";
+        cocktailList.classList.add("notFound");
       }
 
       cocktailList.innerHTML = html;
-  });
+    });
 }
-function getCocktailRecipe(e){
-  if(e.target.classList.contains('recipe-btn')){
-      let cocktailItem = e.target.parentElement.parentElement;
-      fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailItem.dataset.id}`)
-      .then(response => response.json())
-      .then(data => cocktailRecipeModal(data.drinks));
+function getCocktailRecipe(e) {
+  if (e.target.classList.contains("recipe-btn")) {
+    let cocktailItem = e.target.parentElement.parentElement;
+    fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailItem.dataset.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => cocktailRecipeModal(data.drinks));
   }
 }
-
+function removeHidden(cocktail) {
+  var showVideos = document.getElementById("videoList");
+  showVideos.classList.remove("hidden");
+  searchVideo(cocktail);
+}
 // create a modal
-function cocktailRecipeModal(cocktail){
-  console.log(cocktail);
+function cocktailRecipeModal(cocktail) {
   cocktail = cocktail[0];
   let html = `
       <div class = "recipe-cocktail-img">
@@ -81,21 +91,28 @@ function cocktailRecipeModal(cocktail){
       <h2 class = "recipe-title">${cocktail.strDrink}</h2>
       <p class = "recipe-category">${cocktail.strCategory}</p>
       <div class = "recipe-instruct">
-          <h3>Instructions:</h3>
-          <p>${cocktail.strInstructions}</p>
+        <h3>Instructions:</h3>
+        <p>${cocktail.strInstructions}</p>
       </div>
       <div class = "recipe-link">
-      <a href = "https://www.youtube.com/" target = "_blank" class = "recipe-btn">Watch Video</a>
+        <button class = "watch-btn">Find Video</button>
       </div>
   `;
   cocktailDetailsContent.innerHTML = html;
-  cocktailDetailsContent.parentElement.classList.add('showRecipe');
+  cocktailDetailsContent.parentElement.classList.add("showRecipe");
+  const watchVideoBtn = document.querySelector(".watch-btn");
+  // watchVideoBtn.onclick = removeHidden(cocktail.strDrink);
+  watchVideoBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    removeHidden(cocktail.strDrink);
+  });
 }
 
-function searchVideo() {
+function searchVideo(youtubeDrink) {
+  // console.log("Hello");
   fetch(
     "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=" +
-      searchBox.value +
+      youtubeDrink +
       "&type=video&key=" +
       apiKey
   )
@@ -103,20 +120,20 @@ function searchVideo() {
       return response.json();
     })
     .then(function (data) {
-      for (var i = 0; i < data.items.length; i++) {
-        var videoId = data.items[i].id.videoId;
-        // var videoLink = (document.getElementById("video-link").href="https://www.youtube.com/watch?v=" + videoId);
-        // videoUrlEl.textContent = videoLink;
-        var links = document.createElement("a");
-        links.href = ("https://www.youtube.com/watch?v=" + videoId);
-        links.textContent = "https://www.youtube.com/watch?v=" + videoId;
-        console.log(linksEl);
-        linksEl.appendChild(links);
+      linksEl.textContent = "";
+      data.items.map((item) => {
+        const videoId = item.id.videoId;
+        const videoTitle = item.snippet.title;
+        const thumbnail = item.snippet.thumbnails.default.url;
+        const img = document.createElement("img");
+        const link = document.createElement("a");
 
-
-        console.log(data);
-        // console.log(videoLink);
-      }
+        img.src = thumbnail;
+        link.href = youtubeLink + videoId;
+        link.textContent = videoTitle;
+        linksEl.appendChild(img);
+        linksEl.appendChild(link);
+      });
+      console.log(linksEl);
     });
 }
-
