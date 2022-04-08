@@ -16,7 +16,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Wire+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Wire+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
@@ -25,7 +28,12 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/CSS/style.css" />
     <!-- Flavicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/Images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/Images/favicon-32x32.png"
+    />
     <title>Cocktail Creations</title>
   </head>
   <body>
@@ -33,40 +41,63 @@
       <img src="./assets/Images/giphy.gif" alt="" />
     </div>
     <header>
-        <h1 class="header">Cocktail Creations</h1>
-      </header>
+      <h1 class="header">Cocktail Creations</h1>
+    </header>
     <div class="container containerMain">
       <div class="input-group d-flex justify-content-center">
         <!-- search-box section -->
         <div class="cocktail-search-box">
-          <input type="text" id="search-input" class="search-control" placeholder="Search for a drink"/>
-            <!-- search-btn -->
-          <button id="search-btn" type="submit" class="btn btn-primary position-relative search-btn" data-mdb-ripple-unbound="true">Search<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"></span></button>
-            <!-- video-btn -->
-          <button id="video-btn" type="button" class="btn btn-primary position-relative" data-mdb-ripple-unbound="true">Video<span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"></span></button>
-        </div> 
+          <input
+            type="text"
+            id="search-input"
+            class="search-control"
+            placeholder="Search for a drink"
+          />
+          <!-- search-btn -->
+          <button
+            id="search-btn"
+            type="submit"
+            class="btn btn-primary position-relative search-btn"
+            data-mdb-ripple-unbound="true"
+          >
+            Search<span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"
+            ></span>
+          </button>
+          <!-- video-btn -->
+          <button
+            id="video-btn"
+            type="button"
+            class="btn btn-primary position-relative"
+            data-mdb-ripple-unbound="true"
+          >
+            Video<span
+              class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"
+            ></span>
+          </button>
+        </div>
         <!-- end of search-box -->
 
         <!-- cocktail result -->
-        <div class = "cocktail-result">
-          <h2 class = "title">Your Search Results:</h2>
-          <div id= "cocktail"></div>
+        <div class="cocktail-result">
+          <h2 class="title">Your Search Results:</h2>
+          <div id="cocktail"></div>
         </div>
         <!-- cocktail details -->
-        <div class = "cocktail-details">
+        <div class="cocktail-details">
           <!-- recipe close btn -->
-          <button type = "button" class = "recipe-close-btn" id = "recipe-close-btn">
-            <i class = "fas fa-times"></i>
+          <button type="button" class="recipe-close-btn" id="recipe-close-btn">
+            <i class="fas fa-times"></i>
           </button>
 
           <!-- cocktail content -->
-          <div class = "cocktail-details-content"></div>
+          <div class="cocktail-details-content"></div>
+          <!-- video link -->
+          <div id="videoList" class="links hidden"></div>
         </div>
-        <!-- video link -->
-        <div class="links"></div>
       </div>
     </div>
- 
+
     <!-- MDB -->
     <script
       type="text/javascript"
@@ -75,3 +106,5 @@
     <script src="./assets/JS/script.js"></script>
   </body>
 </html>
+
+
