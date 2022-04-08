@@ -37,6 +37,8 @@ recipeCloseBtn.addEventListener("click", () => {
   cocktailDetailsContent.parentElement.classList.remove("showRecipe");
 });
 
+
+
 function getCocktailList() {
   let searchedCocktail = searchBox.value.trim();
   previousSaved(searchedCocktail);
@@ -145,7 +147,7 @@ function previousSaved(cocktail) {
   if(!cocktail) return;
   var getStoredCocktails = JSON.parse(localStorage.getItem("savedCocktails"));
   if (getStoredCocktails) {
-    console.log(getStoredCocktails);
+    // console.log(getStoredCocktails);
     getStoredCocktails.push(cocktail);
     localStorage.setItem("savedCocktails", JSON.stringify(getStoredCocktails));
   } else {
@@ -173,3 +175,33 @@ function previousSaved(cocktail) {
 //   console.log(getStoredCocktails)
 // })
 // };
+
+
+
+var savedCocktails = JSON.parse(localStorage.getItem("savedCocktails")) || [];
+var drinkList = document.getElementById("searchList");
+drinkList.textContent = savedCocktails.length;
+
+function renderList() {
+  drinkList.innerHTML = "";
+  drinkList.textContent = savedCocktails.length;
+// Render a new li for each search
+  for (var i = 0; i < savedCocktails.length; i++) {
+    var list = savedCocktails[i];
+    var drinkList = document.getElementById("searchList");
+    var li = document.createElement("li");
+    li.textContent = list;
+    li.setAttribute("data-index", i);
+    drinkList.appendChild(li);
+    
+
+    searchBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    // var cityInput = document.getElementById("cSearch").value;
+    var searchBox = document.getElementById(searchBox);
+  
+    });
+    
+   }
+
+}
