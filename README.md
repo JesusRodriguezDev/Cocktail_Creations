@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/JesusRodriguezDev/Cocktail_Creations">
-    <img src="assets/Images/webpage.gif" alt="Logo" width="80" height="80">
+    <img src="assets/Images/cocktail-logo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Codey Buddy</h3>
@@ -98,7 +98,7 @@ List of Contributors:
 Micah Diaz - micah.diaz@du.edu [![LinkedIn][linkedin-shield]][linkedin-url-micah] [![GitHub][github-shield]][github-url-micah] </br>
 Jesus Rodriguez - jesusrodriguez7@comcast.net [![LinkedIn][linkedin-shield]][linkedin-url-jesus] [![GitHub][github-shield]][github-url-jesus] </br>
 Kelly Walsh - kellywalsh827@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-kelly] [![GitHub][github-shield]][github-url-kelly] </br>
-Andrew Young - andrewyoung@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-andrew] [![GitHub][github-shield]][github-url-andrew]
+Andrew Young - awyimtb@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-andrew] [![GitHub][github-shield]][github-url-andrew]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
