@@ -63,6 +63,10 @@ Website's Appearance:
 
 ![Appearance](assets/Images/webpage.gif)
 
+Mobile friendly:
+
+![Appearance](assets/Images/mobile.gif)
+
 ### Built With
 
 - [HTML](https://en.wikipedia.org/wiki/HTML)
