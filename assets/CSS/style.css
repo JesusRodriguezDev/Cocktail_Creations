@@ -22,7 +22,7 @@
 /* Buttons */
 .btn {
   background-color: rgb(182, 159, 126);
-  font-family: "Megrim";
+  font-family: "'Libre Baskerville', serif;";
   border: none;
   color: white;
   padding: 10px 24px;
@@ -143,7 +143,7 @@ body {
 
 .recipe-btn,
 .watch-btn {
-  font-family: "Wire One";
+  font-family: "'Libre Baskerville', serif;";
   text-decoration: none;
   text-align: center;
   color: #fff;
@@ -158,13 +158,29 @@ body {
   transition: all 0.4s linear;
 }
 .recipe-btn,
-.watch-btn:hover {
+.watch-btn,
+.finalFavBtn:hover {
   background: var(--btn-color-light);
   color: black;
 }
+.finalFavBtn {
+  font-family: "'Libre Baskerville', serif;";
+  text-decoration: none;
+  text-align: center;
+  color: rgb(6, 6, 6);
+  background: rgb(201, 158, 241);
+  font-weight: 100;
+  font-size: 0.75rem;
+  padding: 0.25rem 0;
+  display: block;
+  width: 100px;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+}
 
 /* cocktail details */
-.cocktail-details {
+.cocktail-details,
+.favorited-videos {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -178,28 +194,34 @@ body {
   display: none;
   padding: 2rem 0;
 }
-.cocktail-details::-webkit-scrollbar {
+.cocktail-details::-webkit-scrollbar,
+.favorited-videos::-webkit-scrollbar {
   width: 10px;
 }
-.cocktail-details::-webkit-scrollbar-thumb {
+.cocktail-details::-webkit-scrollbar-thumb,
+.favorited-videos::-webkit-scrollbar {
   background: #f0f0f0;
   border-radius: 2rem;
 }
 
 /* js related */
-.showRecipe {
+.showRecipe,
+.showFavorites {
   display: block;
   z-index: 999;
 }
 
-.cocktail-details-content {
+.cocktail-details-content,
+.favorited-videos {
   margin: 2rem;
   text-align: center;
 }
-.cocktail-details-content p:not(.recipe-category) {
+.cocktail-details-content p:not(.recipe-category),
+.favorited-videos p:not(.recipe-category) {
   padding: 1rem 0;
 }
-.recipe-close-btn {
+.recipe-close-btn,
+.favorited-videos-close-btn {
   position: absolute;
   right: 2rem;
   top: 2rem;
@@ -273,6 +295,23 @@ body {
   background-color: lightgray;
 }
 
+.related-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.video-image-and-favorite-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: "Libre Baskerville", serif;
+}
+
 /* Media Queries */
 @media screen and (min-width: 600px) {
   .cocktail-search-box {
@@ -291,7 +330,8 @@ body {
   .cocktail-item {
     margin: 0;
   }
-  .cocktail-details {
+  .cocktail-details,
+  .favorited-videos {
     width: 700px;
   }
 }

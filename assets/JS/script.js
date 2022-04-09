@@ -1,10 +1,18 @@
 var searchBox = document.getElementById("search-input");
 var searchBtn = document.getElementById("search-btn");
 var searchBoxId = document.getElementById("searchBoxId");
-var videoButton = document.getElementById("video-btn");
+var favoritedVideosButton = document.getElementById("favorited-video-btn");
 const cocktailList = document.getElementById("cocktail");
-const cocktailDetailsContent = document.querySelector(".cocktail-details-content");
+const cocktailDetailsContent = document.querySelector(
+  ".cocktail-details-content"
+);
+const favoritedVideosContent = document.querySelector(
+  ".favorited-videos-content"
+);
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
+const favoritedVideosCloseBtn = document.getElementById(
+  "favorited-videos-close-btn"
+);
 const containerMain = document.querySelector(".containerMain");
 // var videoUrlEl = document.getElementById("video-link");
 const apiKey = "AIzaSyA2xWtrEgWvRVZbpne84P7jXYvNZB-_J2Y";
@@ -29,16 +37,16 @@ window.onload = () => {
   getCocktailList();
 };
 
-
 // button event for cocktailDB and Youtube
-videoButton.addEventListener("click", searchVideo);
 searchBtn.addEventListener("click", getCocktailList);
 cocktailList.addEventListener("click", getCocktailRecipe);
+favoritedVideosButton.addEventListener("click", favoritedVideosModal);
 recipeCloseBtn.addEventListener("click", () => {
   cocktailDetailsContent.parentElement.classList.remove("showRecipe");
 });
-
-
+favoritedVideosCloseBtn.addEventListener("click", () => {
+  favoritedVideosContent.parentElement.classList.remove("showFavorites");
+});
 
 function getCocktailList() {
   let searchedCocktail = searchBox.value.trim();
@@ -87,6 +95,24 @@ function removeHidden(cocktail) {
   showVideos.classList.remove("hidden");
   searchVideo(cocktail);
 }
+
+function favoritedVideosModal() {
+  let html = "<h1>List of Favorite videos:</h1>";
+  const favoriteVideos = localStorage.getItem("favoriteVideos");
+  if (favoriteVideos !== null) {
+    JSON.parse(favoriteVideos).forEach((favoriteVideo) => {
+      html += `
+              <div class = "favorite-video-in-modal">
+                <a href="${favoriteVideo}" target="_blank">${favoriteVideo}</a>
+              </div>
+          `;
+    });
+  }
+
+  favoritedVideosContent.innerHTML = html;
+  favoritedVideosContent.parentElement.classList.add("showFavorites");
+}
+
 // create a modal
 function cocktailRecipeModal(cocktail) {
   cocktail = cocktail[0];
@@ -114,6 +140,15 @@ function cocktailRecipeModal(cocktail) {
   });
 }
 
+function saveVideoAsFavorite(videoURL) {
+  let favoriteVideos = localStorage.getItem("favoriteVideos");
+  if (favoriteVideos === null) {
+    favoriteVideos = "[]";
+  }
+  const favoriteVideosArray = JSON.parse(favoriteVideos);
+  favoriteVideosArray.push(videoURL);
+  localStorage.setItem("favoriteVideos", JSON.stringify(favoriteVideosArray));
+}
 function searchVideo(youtubeDrink) {
   // console.log("Hello");
   fetch(
@@ -131,21 +166,28 @@ function searchVideo(youtubeDrink) {
         const videoId = item.id.videoId;
         const videoTitle = item.snippet.title;
         const thumbnail = item.snippet.thumbnails.default.url;
-        const img = document.createElement("img");
-        const link = document.createElement("a");
 
-        img.src = thumbnail;
-        link.href = youtubeLink + videoId;
-        link.textContent = videoTitle;
-        linksEl.appendChild(img);
-        linksEl.appendChild(link);
+        linksEl.innerHTML += `<div class="related-video">
+                                <div class="video-image-and-favorite-button">
+                                  <div>
+                                    <img src="${thumbnail}"/>
+                                  </div>
+                                  <div>
+                                    <button onclick="saveVideoAsFavorite('${thumbnail}')" class="finalFavBtn">Add to favorites</button>
+                                  </div>
+                                </div>
+                                <div>
+                                  <a href="${
+                                    youtubeLink + videoId
+                                  }" target="_blank">${videoTitle}</a>
+                                </div>
+                              </div>`;
       });
       console.log(linksEl);
     });
 }
-
 function previousSaved(cocktail) {
-  if(!cocktail) return;
+  if (!cocktail) return;
   var getStoredCocktails = JSON.parse(localStorage.getItem("savedCocktails"));
   if (getStoredCocktails) {
     // console.log(getStoredCocktails);
@@ -154,36 +196,13 @@ function previousSaved(cocktail) {
   } else {
     localStorage.setItem("savedCocktails", JSON.stringify([cocktail]));
   }
-  function addSearchesToList() {
-    getStoredCocktails.forEach(search => {
-      var li = document.createElement("li");
-      var liText = getStoredCocktails[search].value;
-      li.innerHTML = liText;
-      // li.appendChild(document.createTextNode(liText));
-      listSearches.appendChild(li);
-      console.log(getStoredCocktails)
-    })
-    };
-  // addSearchesToList();
-};
-
-// function addSearchesToList() {
-// getStoredCocktails.forEach(search => {
-//   var li = document.createElement("li");
-//   var liText = getStoredCocktails[search].value;
-//   li.appendChild(document.createTextNode(liText));
-//   listSearches.appendChild(li);
-//   console.log(getStoredCocktails)
-// })
-// };
-
-
+}
 function renderList() {
   var savedCocktails = JSON.parse(localStorage.getItem("savedCocktails")) || [];
   var drinkList = document.getElementById("searchList");
   drinkList.innerHTML = "";
-  drinkList.textContent = savedCocktails.length;
-// Render a new li for each search
+  // drinkList.textContent = savedCocktails.length;
+  // Render a new li for each search
   for (var i = 0; i < savedCocktails.length; i++) {
     var list = savedCocktails[i];
     var drinkList = document.getElementById("searchList");
@@ -191,17 +210,14 @@ function renderList() {
     li.textContent = list;
     li.setAttribute("data-index", i);
     drinkList.appendChild(li);
-   }
+  }
 }
-
 // when HTML is finished loading run this function
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   renderList();
 });
-
 const el = document.getElementById("search-btn");
 el.addEventListener("click", search);
-
 function search() {
-    renderList();
+  renderList();
 }
