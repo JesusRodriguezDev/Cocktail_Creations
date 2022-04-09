@@ -181,9 +181,7 @@ function previousSaved(cocktail) {
 function renderList() {
   var savedCocktails = JSON.parse(localStorage.getItem("savedCocktails")) || [];
   var drinkList = document.getElementById("searchList");
-  console.log(drinkList);
   drinkList.innerHTML = "";
-  console.log('here');
   drinkList.textContent = savedCocktails.length;
 // Render a new li for each search
   for (var i = 0; i < savedCocktails.length; i++) {
@@ -191,7 +189,6 @@ function renderList() {
     var drinkList = document.getElementById("searchList");
     var li = document.createElement("li");
     li.textContent = list;
-    console.log(list);
     li.setAttribute("data-index", i);
     drinkList.appendChild(li);
    }
@@ -200,21 +197,11 @@ function renderList() {
 // when HTML is finished loading run this function
 window.addEventListener('load', function() {
   renderList();
-  // const el = document.getElementById("searchBtn");
-  // console.log(el);
-  // el.addEventListener("click", search);
 });
 
-
+const el = document.getElementById("search-btn");
+el.addEventListener("click", search);
 
 function search() {
-  // searchBtn.addEventListener("click", function(event) {
-
-    console.log('here');
-    // event.preventDefault();
     renderList();
-    // var searchBox = document.getElementById(searchBox);
-    // });
 }
-
-// window.onload = function ...
