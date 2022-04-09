@@ -1,27 +1,5 @@
 # Cocktail_Creations
 
-<!-- PROJECT LOGO -->
-<!-- <br />
-<div align="center">
-  <a href="https://github.com/micsdz/codey-buddy">
-    <img src="Assets/Images/codeybuddy.jpg" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">Codey Buddy</h3>
-
-  <p align="center">
-    Your Bud In Learning To Code
-    <br />
-    <a href="https://github.com/micsdz/codey-buddy"><strong>Explore the Docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://micsdz.github.io/codey-buddy/">View Demo</a>
-    ·
-    <a href="https://github.com/micsdz/codey-buddy/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/micsdz/codey-buddy/issues">Request Feature</a>
-  </p>
-</div> -->
 
 ## Description:
 
