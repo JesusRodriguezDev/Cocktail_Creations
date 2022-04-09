@@ -1,78 +1,85 @@
-# Cocktail_Creations
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![Stargazers][stars-shield]][stars-url]
+[![GitHub Watchers][github-watchers]][github-watchers-url]
 
-
-https://user-images.githubusercontent.com/97897877/162550980-2d499bdf-c385-4446-bfaa-94d29680e43c.mp4
+# Cocktail Creations Website
 
 <!-- PROJECT LOGO -->
-<!-- <br />
+<br />
 <div align="center">
-  <a href="https://github.com/micsdz/codey-buddy">
-    <img src="Assets/Images/codeybuddy.jpg" alt="Logo" width="80" height="80">
+  <a href="https://github.com/JesusRodriguezDev/Cocktail_Creations">
+    <img src="assets/Images/webpage.gif" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Codey Buddy</h3>
 
   <p align="center">
-    Your Bud In Learning To Code
+    Find Your Favorite Drink
     <br />
-    <a href="https://github.com/micsdz/codey-buddy"><strong>Explore the Docs »</strong></a>
+    <a href="https://github.com/JesusRodriguezDev/Cocktail_Creations"><strong>Explore the Docs »</strong></a>
     <br />
     <br />
-    <a href="https://micsdz.github.io/codey-buddy/">View Demo</a>
+    <a href="https://jesusrodriguezdev.github.io/Cocktail_Creations/">View Demo</a>
     ·
-    <a href="https://github.com/micsdz/codey-buddy/issues">Report Bug</a>
+    <a href="https://github.com/JesusRodriguezDev/Cocktail_Creations/issues">Report Bug</a>
     ·
-    <a href="https://github.com/micsdz/codey-buddy/issues">Request Feature</a>
+    <a href="https://github.com/JesusRodriguezDev/Cocktail_Creations/issues">Request Feature</a>
   </p>
-</div> -->
+</div>
 
 ## Description:
 
-Cocktail Creations is a site designed to help the user choose a satisfying cocktail. The site displays a pictured list to get the user started. When the get recipe button is cliked the user is presented with a pop up displaying the cocktail picture, instructions, and a "Watch Video" button. The "Watch Video" button is a direct link to the YouTube video selection for the selected drink. In the search feild the user may enter a drink by name. When the search button is clicked the user is presented with a pictured list of variatons on each cocktail. Each variation conatins a "Get Recipe" button which presents the user with the pop up window listing the instructions and the video link.
+Cocktail Creations is a website that allows users to search for a specific drink. 
+It will display the ingredients and instructions on how to make a drink, 
+as well as an instructional Youtube video. Users can lookup 
+search history and save the videos for later use.
 
 ## User Story
 
-AS A user who is seeking a refreshing cocktail,
+AS A USER who wants to make a drink,
 <br>
-I WANT to be able to search for a drink by name,
+I WANT to find written and video instructions,
 <br>
-SO THAT I can find the ingredients for that drink,
-<br>
-I WANT to be able to generate a random drink on click,
-<br>
-SO THAT I can try something different,
+SO THAT I can save it for later.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Application Features:
 
-- Variety of coding languages
-- Linked articles, YouTube videos, and games 
-- Ability to save favorite links for future use
+- Variety of cocktail drinks
+- Ingredients and Instructions
+- YouTube Videos
+- Ability to save video links for future use
 - Mobile friendly user interface
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Application Appearance and Functionality:
 
-<!-- Website's Appearance:
+Website's Appearance:
 
-![Appearance](Assets/gif/codeybuddy.gif) -->
+![Appearance](assets/Images/webpage.gif)
 
 ### Built With
 
+- [HTML](https://en.wikipedia.org/wiki/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS)
+- [Javascript](https://www.javascript.com)
 - [MDBootstrap](https://mdbootstrap.com/)
-- [JQuery](https://jquery.com/)
-
+- [CocktailDB API](https://www.thecocktaildb.com/api.php)
+- [Google Fonts](https://fonts.google.com/)
+- [YouTube API](https://developers.google.com/youtube/v3/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Link
 
-[Portfolio Repository](https://github.com/JesusRodriguezDev/Cocktail_Creations)
+[Cocktail Creations Repository](https://github.com/JesusRodriguezDev/Cocktail_Creations)
 
-[Portfolio Live Website]()
+[Cocktail Creations Live Website](https://jesusrodriguezdev.github.io/Cocktail_Creations/)
 
 ## Credits
 
@@ -80,46 +87,43 @@ List of Contributors:
 
 1. Micah Diaz - HTML, CSS, JavaScript, API
 
-2. Jesus Rodriguez - CSS, JavaScript, API
+2. Jesus Rodriguez - HTML, CSS, JavaScript, API
 
-3. Kelly Walsh - CSS, HTML, JavaScript, API
+3. Kelly Walsh - HTML, CSS, JavaScript, API
 
-4. Andrew Young - HTML, JavaScript, API
+4. Andrew Young - HTML, CSS, JavaScript, API
 
 ## Contact Info
 
 Micah Diaz - micah.diaz@du.edu [![LinkedIn][linkedin-shield]][linkedin-url-micah] [![GitHub][github-shield]][github-url-micah] </br>
- </br>
+Jesus Rodriguez - jesusrodriguez7@comcast.net [![LinkedIn][linkedin-shield]][linkedin-url-jesus] [![GitHub][github-shield]][github-url-jesus] </br>
 Kelly Walsh - kellywalsh827@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-kelly] [![GitHub][github-shield]][github-url-kelly] </br>
-</br>
-Jesus Rodriguez - [![LinkedIn][linkedin-shield]][linkedin-url-jesus] [![GitHub][github-shield]][github-url-jesus] </br>
-</br>
-Andrew Young - awyimtb@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-andy][![GitHub][github-shield]][github-url-andy] </br>
+Andrew Young - andrewyoung@gmail.com [![LinkedIn][linkedin-shield]][linkedin-url-andrew] [![GitHub][github-shield]][github-url-andrew]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/micsdz/codey-buddy.svg?style=for-the-badge
-[contributors-url]: https://github.com/micsdz/codey-buddy/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/micsdz/codey-buddy.svg?style=for-the-badge
-[forks-url]: https://github.com/micsdz/codey-buddy/network/members
-[stars-shield]: https://img.shields.io/github/stars/micsdz/codey-buddy?style=social
-[stars-url]: https://github.com/micsdz/codey-buddy/stargazers
-[issues-shield]: https://img.shields.io/github/issues/micsdz/codey-buddy.svg?style=for-the-badge
-[issues-url]: https://github.com/micsdz/codey-buddy/issues
-[license-shield]: https://img.shields.io/github/license/micsdz/codey-buddy.svg?style=for-the-badge
-[license-url]: https://github.com/micsdz/codey-buddy/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/JesusRodriguezDev/Cocktail_Creations.svg?style=for-the-badge
+[contributors-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JesusRodriguezDev/Cocktail_Creations.svg?style=for-the-badge
+[forks-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/network/members
+[stars-shield]: https://img.shields.io/github/stars/JesusRodriguezDev/Cocktail_Creations?style=social
+[stars-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/stargazers
+[issues-shield]: https://img.shields.io/github/issues/JesusRodriguezDev/Cocktail_Creations.svg?style=for-the-badge
+[issues-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/issues
+[license-shield]: https://img.shields.io/github/license/JesusRodriguezDev/Cocktail_Creations.svg?style=for-the-badge
+[license-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url-micah]: https://www.linkedin.com/in/mdiaz06/
-[linkedin-url-jesus]: 
+[linkedin-url-jesus]: jesusrodriguez7@comcast.net
 [linkedin-url-kelly]: https://www.linkedin.com/in/kellywalsh001/
-[linkedin-url-andy]: https://www.linkedin.com/in/andrew-young-88484a1b3
+[linkedin-url-andrew]: https://www.linkedin.com/in/andrew-young-88484a1b3/
 [github-shield]: https://img.shields.io/badge/-Github-blueviolet.svg?style=for-the-badge&logo=Github&colorB=555
 [github-url-micah]: https://github.com/micsdz
-[github-url-kelly]: https://github.com/kemwalsh
 [github-url-jesus]: https://github.com/JesusRodriguezDev
-[github-url-andy]: https://github.com/AndrewYoung72
-[github-watchers]: https://img.shields.io/github/watchers/micsdz/codey-buddy?style=social
-[github-watchers-url]: https://github.com/micsdz/codey-buddy/watchers
+[github-url-kelly]: https://github.com/kemwalsh
+[github-url-andrew]: https://github.com/AndrewYoung72
+[github-watchers]: https://img.shields.io/github/watchers/JesusRodriguezDev/Cocktail_Creations?style=social
+[github-watchers-url]: https://github.com/JesusRodriguezDev/Cocktail_Creations/watchers
