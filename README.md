@@ -14,7 +14,7 @@
     <img src="assets/Images/cocktail-logo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Codey Buddy</h3>
+<h3 align="center">Cocktail Creations</h3>
 
   <p align="center">
     Find Your Favorite Drink
